@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/style.css"/>
+
+</head>
+
+<body>
+    <h1>Todo List</h1>
+    <div id="app">
+        <main class="container">            
+            <input type="text" id="search-in-page" name="search-in-page" placeholder="inserisci cosa hai fatto" v-model="newToDo">
+            <button @click="addNewTodo">Aggiungi</button>
+            <div class="container-list">
+                <ul>
+                    <li v-for="(thingsToDoText, index) in thingsToDo">
+                        <p>
+                            {{ thingsToDoText.text }} 
+                        </p>
+                        <i class="fa-solid fa-x"></i>
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+
+
+    </div>
+
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

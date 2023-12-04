@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #343540;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    font-size: 5rem;
+    padding: 2rem 0;
+}
+
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+input#search-in-page{
+    border-radius: 3rem;
+    font-size: 2rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+div.container-list{
+    width: 50%;
+}
+
+button
+
+
+ul li{
+    list-style-type: none;
+    background-color: black;
+    font-size: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li:hover{
+    background-color: rgb(149, 149, 142);
+}
+
+ul li i:hover{
+    color: red;
+}
