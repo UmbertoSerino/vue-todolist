@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
+    <title>TodoList</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css"/>
@@ -16,15 +16,19 @@
     <h1>Todo List</h1>
     <div id="app">
         <main class="container">            
-            <input type="text" id="search-in-page" name="search-in-page" placeholder="inserisci cosa hai fatto" v-model="newToDo">
+            <input type="text" id="search-in-page" name="search-in-page" placeholder="inserisci cosa hai fatto" v-model="newToDo" @keyup.enter="addNewTodo">
             <button @click="addNewTodo">Aggiungi</button>
             <div class="container-list">
                 <ul>
-                    <li v-for="(thingsToDoText, index) in thingsToDo">
-                        <p>
-                            {{ thingsToDoText.text }} 
+                    <li v-for="(todo, index) in thingsToDo">
+                        <p v-if="!todo.done" @click="toggleDone(index)" >
+                            {{ todo.text }} 
                         </p>
-                        <i class="fa-solid fa-x"></i>
+                        <p v-else class="text-through">
+                            {{ todo.text }} 
+                        </p>
+                        <i class="fa-solid fa-x" @click="removeTodo(index)"></i>
+
                     </li>
                 </ul>
             </div>

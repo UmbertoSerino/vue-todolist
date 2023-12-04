@@ -16,12 +16,13 @@ createApp({
   data() {
     return {
       thingsToDo: [
-        {text: 'sveglia alle 9', done: false },
-        {text: 'fare colazione', done: false },
-        {text: 'collegarsi su zoom', done: false},
-        {text: 'mangiare e poi studiare', done : false},
+        {text: 'Sveglia alle 8:00', done: false },
+        {text: 'Fare colazione', done: false },
+        {text: 'Collegarsi su zoom', done: false},
+        {text: 'Mangiare e poi studiare', done : false},
       ],
       newToDo: ""
+
     }
   },
   methods: {
@@ -30,6 +31,12 @@ createApp({
         this.thingsToDo.push({ text: this.newToDo, done: false });
         this.newToDo = "";
       }
+    },
+    removeTodo(index) {
+      this.thingsToDo.splice(index, 1);
+    },
+    toggleDone(index) {
+      this.thingsToDo[index].done = !this.thingsToDo[index].done;
     }
   }
 }).mount('#app');
